@@ -1,7 +1,7 @@
 ---
 title: "Lab 7: MR"
 subtitle: "Princeton University"
-author: "Jason Geller, Ph.D.(he/him)"
+author: "INSERT NAME"
 date: 'Updated:`r Sys.Date()`'
 format: html
 toc: true

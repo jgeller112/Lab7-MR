@@ -12,23 +12,25 @@ html:
 bibliography: references.bib
 ---
 
-In this lab, you will be analyzing data from the study by [@hamermesh2005], which investigated various factors influencing teaching evaluation scores. Your task is to create a multiple regression model and write a comprehensive "Results and Discussion" section based on your analysis. Follow these guidelines:
+In this lab, you will be analyzing data from the study by @hamermesh2005, which investigated various factors influencing teaching evaluation scores. Your task is to create a multiple regression model and write a comprehensive "Results and Discussion" section based on your analysis. Follow these guidelines:
 
-1.  **Data Source**: Use the dataset provided . Ensure you are familiar with the dataset's variables and their meanings (see table below).
+1.  **Data Source**: Use the dataset provided (see below) . Ensure you are familiar with the dataset's variables and their meanings.
 
-2.  **Variable Selection**: Select at least three predictors for your regression model. Focus on non-categorical variables.
+2.  **Variable Selection**: Select at least three predictors for your regression model predicting evaluation scores. Focus on non-categorical variables. Make sure at least 1 predictor is significant (you might have to fish around).
 
-3.  **Modeling and Analysis**: Develop a multiple regression model. Ensure you conduct and report the following:
+3.  **Modeling and Analysis**: Develop a multiple regression model. Ensure you conduct the following:
 
     -   **Assumption Checks**: Conduct checks for linearity, normality, multicollinearity, homoscedasticity, and outliers. Describe how you addressed any violations. If normality is violated, ignore that for now, but please note it.
 
-    -   **Statistical Tests**: Include F-tests and adjusted $R^2$ for overall model. For invidual predictors, reprot unstandardized regression coefficients, 95% CIs, t-tests and partial or semi-partial coefs.
+    -   **Statistical Tests**: Include F-tests and adjusted $R^2$ for overall model. For invidual predictors, report unstandardized (\$b\$) regression coefficients, 95% CIs around $b$, t-tests, p values, and partial or semi-partial coefs.
 
-4.  **Visualizations**: Include a partial regression plot for significant relationships.
+        -   Look into packages like `modelsummary` `gtsummary or` `stargazer` to see what kind of nice tables you can produce (at least for the regression coefs in your model).
+
+4.  **Visualizations**: Include a partial regression plot for significant relationships in your analysis
 
 5.  **Results and Discussion Section**: Write a section that includes:
 
-    -   An overview of your model choice and the rationale behind selecting specific variables.
+    -   An overview of your model choice and the rationale behind selecting specific variables
 
     -   A discussion of assumption checks and how any violations were addressed, if they were (ignore normality for now).
 
@@ -36,7 +38,9 @@ In this lab, you will be analyzing data from the study by [@hamermesh2005], whic
 
     -   Interpretation of the results: Discuss what your findings imply about the factors affecting teaching evaluation scores.
 
-    Structure your "Results and Discussion" section clearly. Use tables and figures where appropriate to present your data and findings. Ensure that your statistical results are presented in a readable and organized manner.
+    Structure your "Results and Discussion" section clearly. Use tables and figures where appropriate to present your data and findings. Ensure that your statistical results are presented in a readable and organized manner and according to APA style (refer to the slides from class).
+
+    **DO NOT JUST COPY THE TEXT FROM REPORT!**
 
 | variable        | description                                                                           |
 |:---------------|:-------------------------------------------------------|
@@ -63,7 +67,7 @@ In this lab, you will be analyzing data from the study by [@hamermesh2005], whic
 | `pic_color`     | color of professor's picture: color, black & white.                                   |
 
 ```{r}
-# will load data into R
+# will load data into R envior
 load(url("http://www.openintro.org/stat/data/evals.RData"))
 
 ```
@@ -74,8 +78,14 @@ load(url("http://www.openintro.org/stat/data/evals.RData"))
 
 ## Modeling and analysis
 
+### Model outliers
+
 ### Assumption checks
+
+::: callout-tip
+Instead of eyeballing it you can call the specific functions `check_normality` or `check_heteroscedasticity` and it will tell you if the assumption has been violated.
+:::
 
 ## Visualizations
 
-## Results and Discussion
+## Results and discussion

@@ -1,0 +1,81 @@
+---
+title: "Lab 7: MR"
+subtitle: "Princeton University"
+author: "Jason Geller, Ph.D.(he/him)"
+date: 'Updated:`r Sys.Date()`'
+format: html
+toc: true
+toc_float: true
+html:
+    code-fold: true
+    code-tools: true
+bibliography: references.bib
+---
+
+In this lab, you will be analyzing data from the study by [@hamermesh2005], which investigated various factors influencing teaching evaluation scores. Your task is to create a multiple regression model and write a comprehensive "Results and Discussion" section based on your analysis. Follow these guidelines:
+
+1.  **Data Source**: Use the dataset provided . Ensure you are familiar with the dataset's variables and their meanings (see table below).
+
+2.  **Variable Selection**: Select at least three predictors for your regression model. Focus on non-categorical variables.
+
+3.  **Modeling and Analysis**: Develop a multiple regression model. Ensure you conduct and report the following:
+
+    -   **Assumption Checks**: Conduct checks for linearity, normality, multicollinearity, homoscedasticity, and outliers. Describe how you addressed any violations. If normality is violated, ignore that for now, but please note it.
+
+    -   **Statistical Tests**: Include F-tests and adjusted $R^2$ for overall model. For invidual predictors, reprot unstandardized regression coefficients, 95% CIs, t-tests and partial or semi-partial coefs.
+
+4.  **Visualizations**: Include a partial regression plot for significant relationships.
+
+5.  **Results and Discussion Section**: Write a section that includes:
+
+    -   An overview of your model choice and the rationale behind selecting specific variables.
+
+    -   A discussion of assumption checks and how any violations were addressed, if they were (ignore normality for now).
+
+    -   A presentation of your model's results, including statistical tests.
+
+    -   Interpretation of the results: Discuss what your findings imply about the factors affecting teaching evaluation scores.
+
+    Structure your "Results and Discussion" section clearly. Use tables and figures where appropriate to present your data and findings. Ensure that your statistical results are presented in a readable and organized manner.
+
+| variable        | description                                                                           |
+|:---------------|:-------------------------------------------------------|
+| `score`         | average professor evaluation score: (1) very unsatisfactory - (5) excellent.          |
+| `rank`          | rank of professor: teaching, tenure track, tenured.                                   |
+| `ethnicity`     | ethnicity of professor: not minority, minority.                                       |
+| `gender`        | gender of professor: female, male.                                                    |
+| `language`      | language of school where professor received education: english or non-english.        |
+| `age`           | age of professor.                                                                     |
+| `cls_perc_eval` | percent of students in class who completed evaluation.                                |
+| `cls_did_eval`  | number of students in class who completed evaluation.                                 |
+| `cls_students`  | total number of students in class.                                                    |
+| `cls_level`     | class level: lower, upper.                                                            |
+| `cls_profs`     | number of professors teaching sections in course in sample: single, multiple.         |
+| `cls_credits`   | number of credits of class: one credit (lab, PE, etc.), multi credit.                 |
+| `bty_f1lower`   | beauty rating of professor from lower level female: (1) lowest - (10) highest.        |
+| `bty_f1upper`   | beauty rating of professor from upper level female: (1) lowest - (10) highest.        |
+| `bty_f2upper`   | beauty rating of professor from second upper level female: (1) lowest - (10) highest. |
+| `bty_m1lower`   | beauty rating of professor from lower level male: (1) lowest - (10) highest.          |
+| `bty_m1upper`   | beauty rating of professor from upper level male: (1) lowest - (10) highest.          |
+| `bty_m2upper`   | beauty rating of professor from second upper level male: (1) lowest - (10) highest.   |
+| `bty_avg`       | average beauty rating of professor.                                                   |
+| `pic_outfit`    | outfit of professor in picture: not formal, formal.                                   |
+| `pic_color`     | color of professor's picture: color, black & white.                                   |
+
+```{r}
+# will load data into R
+load(url("http://www.openintro.org/stat/data/evals.RData"))
+
+```
+
+## Data 
+
+## Variable selection
+
+## Modeling and analysis
+
+### Assumption checks
+
+## Visualizations
+
+## Results and Discussion

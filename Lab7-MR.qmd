@@ -14,17 +14,17 @@ bibliography: references.bib
 
 In this lab, you will be analyzing data from the study by @hamermesh2005, which investigated various factors influencing teaching evaluation scores. Your task is to create a multiple regression model and write a comprehensive "Results and Discussion" section based on your analysis. Follow these guidelines:
 
-1.  **Data Source**: Use the dataset provided (see below) . Ensure you are familiar with the dataset's variables and their meanings.
+1.  **Data Source**: Load the dataset called "evals.csv". Ensure you are familiar with the dataset's variables and their meanings.
 
 2.  **Variable Selection**: Select at least three predictors for your regression model predicting evaluation scores. Focus on non-categorical variables. Make sure at least 1 predictor is significant (you might have to fish around).
 
 3.  **Modeling and Analysis**: Develop a multiple regression model. Ensure you conduct the following:
 
-    -   **Assumption Checks**: Conduct checks for linearity, normality, multicollinearity, homoscedasticity, and outliers. Describe how you addressed any violations. If normality is violated, ignore that for now, but please note it.
+    -   **Assumption Checks**: Conduct checks for normality, multicollinearity, homoscedasticity, and outliers. We are going to assume our variables are linear, errors are independent, and additive
 
-    -   **Statistical Tests**: Include F-tests and adjusted $R^2$ for overall model. For invidual predictors, report unstandardized (\$b\$) regression coefficients, 95% CIs around $b$, t-tests, p values, and partial or semi-partial coefs.
+    -   **Statistical Tests**: Include F-tests and adjusted $R^2$ for overall model. For invidual predictors, report unstandardized (\$b\$) regression coefficients, 95% CIs around $b$, t-tests, p values, and partial or semi-partial coefs
 
-        -   Look into packages like `modelsummary` `gtsummary or` `stargazer` to see what kind of nice tables you can produce (at least for the regression coefs in your model).
+        -   Look into packages like `modelsummary` `gtsummary or` `stargazer` to see what kind of nice tables you can produce (at least for the regression coefs in your model)
 
 4.  **Visualizations**: Include a partial regression plot for significant relationships in your analysis
 
@@ -32,15 +32,13 @@ In this lab, you will be analyzing data from the study by @hamermesh2005, which 
 
     -   An overview of your model choice and the rationale behind selecting specific variables
 
-    -   A discussion of assumption checks and how any violations were addressed, if they were (ignore normality for now).
+    -   A discussion of assumption checks and how any violations were addressed (ignore normality for now)
 
-    -   A presentation of your model's results, including statistical tests.
+    -   A presentation of your model's results, including statistical tests
 
-    -   Interpretation of the results: Discuss what your findings imply about the factors affecting teaching evaluation scores.
+    -   Interpretation of the results: Discuss what your findings imply about the factors affecting teaching evaluation scores
 
-    Structure your "Results and Discussion" section clearly. Use tables and figures where appropriate to present your data and findings. Ensure that your statistical results are presented in a readable and organized manner and according to APA style (refer to the slides from class).
-
-    **DO NOT JUST COPY THE TEXT FROM REPORT!**
+    Structure your "Results and Discussion" section clearly. Use tables and figures where appropriate to present your data and findings. Ensure that your statistical results are presented in a readable and organized manner and according to APA style (refer to the slides from class or come talk to me if you are having difficultly writing this up)
 
 | variable        | description                                                                           |
 |:---------------|:-------------------------------------------------------|
@@ -66,13 +64,12 @@ In this lab, you will be analyzing data from the study by @hamermesh2005, which 
 | `pic_outfit`    | outfit of professor in picture: not formal, formal.                                   |
 | `pic_color`     | color of professor's picture: color, black & white.                                   |
 
+## Data 
+
 ```{r}
 # will load data into R envior
-load(url("http://www.openintro.org/stat/data/evals.RData"))
-
+data <- 
 ```
-
-## Data 
 
 ## Variable selection
 
@@ -83,7 +80,7 @@ load(url("http://www.openintro.org/stat/data/evals.RData"))
 ### Assumption checks
 
 ::: callout-tip
-Instead of eyeballing it you can call the specific functions `check_normality` or `check_heteroscedasticity` and it will tell you if the assumption has been violated.
+Instead of eyeballing it you can call the specific functions `check_normality` `check_heteroscedasticity` `check_collinearity` it will tell you if the assumption has been violated.
 :::
 
 ## Visualizations
